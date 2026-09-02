@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyHOPE — living logo</title>
+  <style>
+    :root {
+      --blue: #273f96;
+      --yellow: #efc72b;
+      --green: #91b991;
+      --paper: #fdfcf8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 43%, #fff 0, var(--paper) 68%);
+    }
+
+    .logo {
+      display: block;
+      width: min(86vw, 31rem);
+      height: auto;
+      overflow: visible;
+      user-select: none;
+    }
+
+    #hands {
+      transform-box: fill-box;
+      transform-origin: 50% 87%;
+      animation: breathe 5.8s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .particle {
+      transform-box: fill-box;
+      transform-origin: center;
+      filter: url(#soft-edge);
+      will-change: transform, opacity;
+    }
+
+    .particle.popping {
+      animation: pop 420ms cubic-bezier(.3,.7,.35,1) forwards;
+    }
+
+    .pop-ring {
+      fill: none;
+      stroke-width: 1.7;
+      transform-box: fill-box;
+      transform-origin: center;
+      pointer-events: none;
+      animation: pressure-ring 420ms cubic-bezier(.15,.65,.25,1) forwards;
+      will-change: transform, opacity;
+    }
+
+    @keyframes breathe {
+      0%   { transform: translate(-.5px, .2px) rotate(-.18deg) scaleX(.998); }
+      48%  { transform: translate(.6px, -1px) rotate(.22deg) scaleX(1.006); }
+      100% { transform: translate(-.2px, -.3px) rotate(-.1deg) scaleX(1.001); }
+    }
+
+    @keyframes pop {
+      0%   { opacity: 1; transform: scale(1); }
+      18%  { opacity: 1; transform: scale(1.16); }
+      34%  { opacity: .96; transform: scale(.82); }
+      100% { opacity: 0; transform: scale(0); }
+    }
+
+    @keyframes pressure-ring {
+      0%   { opacity: 0; transform: scale(.82); }
+      15%  { opacity: .62; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.48); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #hands { animation: none; }
+      .particle, .particle.popping, .pop-ring { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="logo" viewBox="0 0 340.157 447.874" role="img"
+       aria-labelledby="logo-title logo-description">
+    <title id="logo-title">Animated HyHOPE logo</title>
+    <desc id="logo-description">Blue hands cradle a gently changing cloud of blue, yellow and green circles.</desc>
+
+    <defs>
+      <filter id="flame-flicker" x="-8%" y="-5%" width="116%" height="112%"
+              color-interpolation-filters="sRGB">
+        <feTurbulence id="turbulence" type="fractalNoise" baseFrequency=".008 .022"
+                      numOctaves="2" seed="7" result="noise"/>
+        <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise"
+                           scale="1.8" xChannelSelector="R" yChannelSelector="B"/>
+      </filter>
+      <filter id="soft-edge" x="-15%" y="-15%" width="130%" height="130%">
+        <feGaussianBlur stdDeviation=".12"/>
+      </filter>
+      <clipPath id="particle-window">
+        <path d="M27 6H313V254
+                 C291 222 278 195 269 164
+                 C254 217 219 249 170 308
+                 C120 249 84 217 70 164
+                 C61 195 48 222 27 254Z"/>
+      </clipPath>
+    </defs>
+
+    <g id="particle-window" clip-path="url(#particle-window)">
+      <g id="particles" aria-hidden="true"></g>
+    </g>
+
+    <!-- Reconstructed from the vector paths in logo.pdf. -->
+    <g id="hands" filter="url(#flame-flicker)" aria-hidden="true">
+      <path fill="var(--blue)" transform="translate(311.811 168.969) scale(1 -1)" d="
+        M0 0
+        C0 24.001 -5.974 46.603 -16.503 66.415
+        C-17.254 67.728 -20.791 73.893 -23.223 77.751
+        C-23.358 77.956 -23.491 78.16 -23.626 78.364
+        C-26.333 82.349 -29.955 80.931 -31.433 80.192
+        C-32.94 79.438 -35.35 76.727 -33.316 72.585
+        C-31.283 68.442 -26.689 54.434 -25.333 32.407
+        C-23.977 10.38 -32.262 -10.036 -39.116 -25.25
+        C-45.969 -40.464 -55.459 -49.878 -55.459 -49.878
+        C-47.325 -34.74 -46.421 -17.191 -45.517 .357
+        C-44.613 17.905 -51.241 12.935 -55.384 20.466
+        C-59.526 27.998 -64.798 28.977 -67.585 27.697
+        C-70.372 26.416 -73.987 20.391 -72.028 13.839
+        C-70.07 7.286 -67.66 -3.333 -74.966 -18.622
+        C-82.271 -33.911 -100.799 -52.062 -114.657 -69.385
+        C-128.515 -86.708 -134.992 -104.633 -138.758 -116.533
+        C-142.524 -128.432 -140.038 -137.621 -140.038 -137.621
+        C-142.607 -133.573 -142.223 -128.884 -145.913 -113.369
+        C-149.603 -97.854 -158.114 -84.674 -167.227 -71.117
+        C-171.362 -64.966 -180.599 -54.463 -190.303 -44.758
+        C-201.588 -33.473 -208.199 -20.129 -208.199 -20.129
+        C-217.011 -5.066 -213.622 5.554 -211.965 13.756
+        C-210.308 21.957 -213.859 26.622 -215.354 27.471
+        C-217.613 28.753 -220.948 28.753 -224.693 25.008
+        C-229.873 19.828 -235.614 6.533 -237.346 -12.597
+        C-239.078 -31.727 -228.911 -50.481 -228.911 -50.481
+        C-231.471 -47.92 -248.116 -23.518 -253.313 -3.409
+        C-258.51 16.701 -258.284 24.835 -257.832 39.371
+        C-257.38 53.906 -251.053 70.325 -250.13 72.821
+        C-249.207 75.316 -249.02 78.535 -252.56 80.267
+        C-253.744 80.846 -254.746 81.008 -255.639 80.885
+        C-257.401 80.641 -259.312 79.021 -260.627 77.162
+        C-262.569 74.176 -264.405 71.115 -266.123 67.979
+        C-266.443 67.373 -266.772 66.756 -267.111 66.132
+        C-277.547 46.388 -283.465 23.887 -283.465 0
+        C-283.465 -78.277 -220.009 -141.732 -141.732 -141.732
+        C-63.456 -141.732 0 -78.277 0 0Z"/>
+    </g>
+
+    <!-- Original HyHOPE lettering, retained as paths so no external font is needed. -->
+    <path fill="var(--green)" aria-label="HyHOPE"
+          transform="translate(106.1136 377.3678) scale(1 -1)" d="
+      M0 0
+      C-2.618 0 -4.74 -2.122 -4.74 -4.74
+      V-11.69 C-4.74 -13.729 -5.932 -15.626 -7.93 -16.764
+      C-10.394 -18.169 -13.54 -18.131 -15.955 -16.67
+      C-17.879 -15.492 -18.998 -13.638 -18.998 -11.68
+      V-4.74 C-18.998 -2.122 -21.12 0 -23.738 0
+      S-28.477 -2.122 -28.477 -4.74 V-11.68
+      C-28.477 -16.946 -25.684 -21.807 -21.002 -24.694
+      C-19.643 -25.527 -18.249 -26.127 -16.805 -26.545
+      L-16.749 -37.445 C-16.736 -40.054 -14.617 -42.16 -12.01 -42.16
+      C-9.368 -42.147 -7.257 -40.014 -7.27 -37.397 L-7.325 -26.663
+      C-5.905 -26.289 -4.527 -25.736 -3.236 -25.001
+      C1.684 -22.197 4.74 -17.097 4.74 -11.69 V-4.74 C4.74 -2.122 2.618 0 0 0Z
+
+      M200.651 -16.157 H181.883 V-6.002 H196.59
+      C199.411 -6.002 201.696 -3.716 201.696 -.896
+      S199.411 4.21 196.59 4.21 H181.883 V12.668 H200.651
+      C203.439 12.668 205.697 14.927 205.697 17.714
+      S203.439 22.76 200.651 22.76 H176.837
+      C174.05 22.76 171.791 20.501 171.791 17.714 V-21.203
+      C171.791 -23.99 174.05 -26.249 176.837 -26.249 H200.651
+      C203.439 -26.249 205.697 -23.99 205.697 -21.203
+      S203.439 -16.157 200.651 -16.157Z
+
+      M103.752 -1.177 C103.752 6.938 97.149 13.541 89.033 13.541
+      S74.316 6.938 74.316 -1.177 V-2.345
+      C74.316 -10.461 80.918 -17.063 89.033 -17.063
+      S103.752 -10.461 103.752 -2.345Z
+      M113.843 -1.177 V-2.345 C113.843 -16.026 102.714 -27.155 89.033 -27.155
+      S64.224 -16.026 64.224 -2.345 V-1.177
+      C64.224 12.503 75.353 23.633 89.033 23.633
+      S113.843 12.503 113.843 -1.177Z
+
+      M151.514 6.153 C151.514 9.829 150.043 11.077 148.761 11.753
+      C147.288 12.531 145.683 12.608 145.669 12.608 H133.757 V-.233 H145.6
+      C150.938 -.038 151.514 4.296 151.514 6.153Z
+      M161.726 6.153 C161.726 -5.931 152.148 -10.394 145.709 -10.445 H133.757
+      V-23.361 C133.757 -26.181 131.471 -28.467 128.651 -28.467
+      S123.545 -26.181 123.545 -23.361 V17.714
+      C123.545 20.534 125.831 22.82 128.651 22.82 H145.669
+      C152.124 22.82 161.726 18.381 161.726 6.153Z
+
+      M48.862 24.038 C46.042 24.038 43.756 21.752 43.756 18.932 V4.21 H23.95
+      V18.932 C23.95 21.752 21.664 24.038 18.844 24.038
+      S13.738 21.752 13.738 18.932 V-22.116
+      C13.738 -24.936 16.024 -27.222 18.844 -27.222
+      S23.95 -24.936 23.95 -22.116 V-6.002 H43.756 V-22.116
+      C43.756 -24.936 46.042 -27.222 48.862 -27.222
+      S53.968 -24.936 53.968 -22.116 V18.932
+      C53.968 21.752 51.682 24.038 48.862 24.038Z
+
+      M-37.537 19 V-22.049 C-37.537 -24.869 -39.823 -27.155 -42.643 -27.155
+      S-47.749 -24.869 -47.749 -22.049 V-5.934 H-67.555 V-22.049
+      C-67.555 -24.869 -69.841 -27.155 -72.661 -27.155
+      S-77.767 -24.869 -77.767 -22.049 V19
+      C-77.767 21.82 -75.481 24.105 -72.661 24.105
+      S-67.555 21.82 -67.555 19 V4.277 H-47.749 V19
+      C-47.749 21.82 -45.463 24.105 -42.643 24.105
+      S-37.537 21.82 -37.537 19Z"/>
+  </svg>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const NS = 'http://www.w3.org/2000/svg';
+      const layer = document.querySelector('#particles');
+      const turbulence = document.querySelector('#turbulence');
+      const displacement = document.querySelector('#displacement');
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const colors = ['#273f96', '#273f96', '#273f96', '#efc72b', '#91b991'];
+      const particles = [];
+      const bounds = { left: 34, right: 306, top: 8, bottom: 259 };
+      const random = (min, max) => min + Math.random() * (max - min);
+      let previous = performance.now();
+      let spawnClock = 0;
+      let nextSpawn = random(.38, .76);
+      let flickerClock = 0;
+      let running = !document.hidden;
+
+      function chamberHalfWidth(y) {
+        // Broad at the top, gently tapering into the hands near the bottom.
+        if (y < 160) return 136;
+        return 136 - (y - 160) * .72;
+      }
+
+      function openPosition(radius = 3) {
+        const candidates = [];
+
+        // Sample the whole chamber, then strongly favor the least crowded spots.
+        // Choosing from several good candidates keeps the result from looking gridded.
+        for (let attempt = 0; attempt < 52; attempt++) {
+          const y = random(bounds.top + radius, bounds.bottom - radius);
+          const half = chamberHalfWidth(y) - radius;
+          const x = random(170 - half, 170 + half);
+          let clearance = 1000;
+
+          for (const p of particles) {
+            if (p.popping) continue;
+            clearance = Math.min(clearance,
+              Math.hypot(x - p.x, y - p.y) - radius - p.r);
+          }
+          candidates.push({ x, y, clearance });
+        }
+
+        candidates.sort((a, b) => b.clearance - a.clearance);
+        const roomy = candidates.filter(candidate => candidate.clearance > 3);
+        const pool = (roomy.length ? roomy : candidates).slice(0, 6);
+        // The best candidate has the highest weight, with some natural variation.
+        const pick = Math.floor(Math.pow(Math.random(), 2.4) * pool.length);
+        return pool[pick] ?? { x: 170, y: 110 };
+      }
+
+      function makeParticle(options = {}) {
+        const r = options.r ?? random(1.7, 3.4);
+        const pos = options.x == null ? openPosition(r) : options;
+        const circle = document.createElementNS(NS, 'circle');
+        const color = options.color ?? colors[Math.floor(Math.random() * colors.length)];
+        circle.classList.add('particle');
+        circle.setAttribute('fill', color);
+        circle.setAttribute('cx', pos.x);
+        circle.setAttribute('cy', pos.y);
+        circle.setAttribute('r', r);
+        layer.append(circle);
+
+        particles.push({
+          el: circle,
+          x: pos.x,
+          y: pos.y,
+          r,
+          color,
+          growth: options.growth ?? random(.42, 1.05),
+          vx: random(-.48, .48),
+          vy: random(-.34, .18),
+          phase: random(0, Math.PI * 2),
+          age: options.age ?? 0,
+          grace: options.grace ?? random(1.1, 2.4),
+          maxR: options.maxR ?? random(12, 26),
+          popping: false
+        });
+      }
+
+      function pop(p) {
+        if (p.popping) return;
+        p.popping = true;
+        p.el.classList.add('popping');
+
+        // This pressure ring shares the bubble's exact center. Explicit SVG
+        // transform-box/origin rules keep its scale from drifting toward (0, 0).
+        const ring = document.createElementNS(NS, 'circle');
+        ring.classList.add('pop-ring');
+        ring.setAttribute('cx', p.x);
+        ring.setAttribute('cy', p.y);
+        ring.setAttribute('r', p.r);
+        ring.setAttribute('stroke', p.color);
+        layer.append(ring);
+
+        setTimeout(() => {
+          ring.remove();
+          p.el.remove();
+          const index = particles.indexOf(p);
+          if (index !== -1) particles.splice(index, 1);
+        }, reducedMotion ? 0 : 430);
+      }
+
+      function seedLogo() {
+        const seeds = [
+          [76,31,6,'#273f96'], [102,20,9,'#91b991'], [132,38,6,'#efc72b'],
+          [163,21,12,'#91b991'], [202,31,8,'#273f96'], [235,22,7,'#efc72b'],
+          [267,38,6,'#273f96'], [53,62,7,'#efc72b'], [83,58,9,'#273f96'],
+          [117,68,7,'#efc72b'], [151,59,8,'#273f96'], [190,61,13,'#91b991'],
+          [228,67,10,'#91b991'], [271,73,8,'#efc72b'], [42,95,6,'#273f96'],
+          [70,93,7,'#273f96'], [101,101,14,'#91b991'], [139,91,8,'#273f96'],
+          [169,105,7,'#efc72b'], [205,99,7,'#273f96'], [244,105,8,'#273f96'],
+          [287,101,6,'#efc72b'], [57,132,5,'#273f96'], [87,140,6,'#efc72b'],
+          [122,132,8,'#273f96'], [154,145,12,'#91b991'], [190,137,6,'#273f96'],
+          [224,145,8,'#efc72b'], [262,135,5,'#273f96'], [78,176,6,'#273f96'],
+          [112,179,7,'#273f96'], [143,185,6,'#efc72b'], [175,177,8,'#273f96'],
+          [208,185,6,'#273f96'], [240,176,5,'#273f96'], [104,215,5,'#273f96'],
+          [137,222,5,'#273f96'], [169,215,6,'#273f96'], [200,224,5,'#273f96'],
+          [229,211,5,'#273f96'], [151,248,4,'#273f96'], [188,246,4,'#273f96']
+        ];
+
+        seeds.forEach(([x,y,r,color]) => makeParticle({
+          x, y, r, color, age: random(0, 5), grace: random(2.5, 5),
+          growth: random(.14, .42), maxR: random(Math.max(r + 5, 14), 27)
+        }));
+      }
+
+      function updateParticle(p, dt, now) {
+        p.age += dt;
+        p.r += p.growth * dt;
+
+        const wander = now * .00055 + p.phase;
+        p.vx += Math.sin(wander * 1.7) * .055 * dt;
+        p.vy += Math.cos(wander * 1.3) * .045 * dt;
+        // A light spring keeps the population gathered in the heart of the cup.
+        // It is intentionally weaker than the individual wandering motion.
+        p.vx += (170 - p.x) * .0024 * dt;
+        p.vy += (132 - p.y) * .0015 * dt;
+        p.vx *= Math.pow(.92, dt);
+        p.vy *= Math.pow(.92, dt);
+        p.x += (p.vx + Math.sin(wander) * .19) * dt;
+        p.y += (p.vy + Math.cos(wander * .8) * .12) * dt;
+
+        const half = chamberHalfWidth(p.y) - p.r;
+        const left = 170 - half;
+        const right = 170 + half;
+        if (p.x < left) { p.x = left; p.vx = Math.abs(p.vx) * .7; }
+        if (p.x > right) { p.x = right; p.vx = -Math.abs(p.vx) * .7; }
+        if (p.y < bounds.top + p.r) { p.y = bounds.top + p.r; p.vy = Math.abs(p.vy) * .65; }
+        if (p.y > bounds.bottom - p.r) { p.y = bounds.bottom - p.r; p.vy = -Math.abs(p.vy) * .65; }
+
+        p.el.setAttribute('cx', p.x.toFixed(2));
+        p.el.setAttribute('cy', p.y.toFixed(2));
+        p.el.setAttribute('r', p.r.toFixed(2));
+        if (p.r >= p.maxR) pop(p);
+      }
+
+      function resolveContacts() {
+        for (let i = 0; i < particles.length; i++) {
+          const a = particles[i];
+          if (a.popping || a.age < a.grace) continue;
+          for (let j = i + 1; j < particles.length; j++) {
+            const b = particles[j];
+            if (b.popping || b.age < b.grace) continue;
+            const dx = b.x - a.x;
+            const dy = b.y - a.y;
+            const touching = Math.hypot(dx, dy) <= (a.r + b.r) * .985;
+            if (touching) {
+              pop(a.r >= b.r ? a : b);
+              break;
+            }
+          }
+        }
+      }
+
+      function frame(now) {
+        if (!running) return;
+        const dt = Math.min((now - previous) / 1000, .045);
+        previous = now;
+        spawnClock += dt;
+        flickerClock += dt;
+
+        particles.slice().forEach(p => !p.popping && updateParticle(p, dt, now));
+        resolveContacts();
+
+        const activeCount = particles.reduce((count, p) => count + !p.popping, 0);
+        const populationBoost = activeCount < 38 ? .48 : 1;
+        if (spawnClock > nextSpawn * populationBoost && activeCount < 58) {
+          spawnClock = 0;
+          nextSpawn = random(.38, .76);
+          makeParticle();
+        }
+
+        if (flickerClock > .09) {
+          flickerClock = 0;
+          const wave = now * .0007;
+          turbulence.setAttribute('baseFrequency',
+            `${(.0075 + Math.sin(wave) * .0012).toFixed(4)} ${(.021 + Math.cos(wave * .73) * .003).toFixed(4)}`);
+          displacement.setAttribute('scale', (1.55 + Math.sin(wave * 1.37) * .65).toFixed(2));
+        }
+
+        requestAnimationFrame(frame);
+      }
+
+      seedLogo();
+
+      if (!reducedMotion) requestAnimationFrame(frame);
+
+      document.addEventListener('visibilitychange', () => {
+        running = !document.hidden;
+        if (running && !reducedMotion) {
+          previous = performance.now();
+          requestAnimationFrame(frame);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
