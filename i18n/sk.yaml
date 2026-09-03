@@ -1,0 +1,111 @@
+global:
+  language: "SK"
+
+article:
+  anchor_label: "Kotva"
+  date: "{{ .Date }}"
+  date_updated: "Aktualizované: {{ .Date }}"
+  draft: "Koncept"
+  edit_title: "Upraviť obsah"
+  reading_time:
+    one: "{{ .Count }} min"
+    other: "{{ .Count }} min"
+  reading_time_title: "Čas čítania"
+  table_of_contents: "Obsah"
+  word_count:
+    one: "{{ .Count }} slovo"
+    other: "{{ .Count }} slov"
+  views:
+    one: "{{ .Count }} zobrazenie"
+    other: "{{ .Count }} zobrazení"
+  likes:
+    one: "{{ .Count }} páči sa mi to"
+    other: "{{ .Count }} páči sa mi to"
+  part_of_series: "Tento článok je súčasťou série."
+  part: "Časť"
+  this_article: "Tento článok"
+  related_articles: "Súvisiace"
+  reply_by_email: "Odpovedať e-mailom"
+  reply_to: "Odpovedať na {{ .Title }}"
+  zen_mode_title:
+    enable: "Zapnúť režim zen"
+    disable: "Vypnúť režim zen"
+
+a11y:
+  title: "Nastavenia prístupnosti"
+  disable_blur: "Vypnúť rozmazanie"
+  disable_images: "Vypnúť obrázky na pozadí"
+  show_link_underline: "Zobraziť podčiarknutie odkazov"
+  font_size: "Veľkosť písma"
+
+author:
+  byline_title: "Autor"
+
+code:
+  copy: "Kopírovať"
+  copied: "Skopírované"
+
+error:
+  404_title: "Stránka sa nenašla :confused:"
+  404_error: "Chyba 404"
+  404_description: "Zdá sa, že požadovaná stránka neexistuje."
+  404_home: "Späť na domovskú stránku"
+
+footer:
+  dark_appearance: "Prepnúť na tmavý vzhľad"
+  light_appearance: "Prepnúť na svetlý vzhľad"
+  powered_by: "Používa {{ .Hugo }} &amp; {{ .Theme }}"
+
+list:
+  externalurl_title: "Odkaz na externú stránku"
+  no_articles: "Zatiaľ tu nie sú žiadne články."
+
+nav:
+  close_menu: "Zavrieť ponuku"
+  footer_menu: "Pätičková ponuka"
+  main_menu: "Hlavná ponuka"
+  mobile_menu: "Mobilná ponuka"
+  scroll_to_top_title: "Prejsť nahor"
+  skip_to_main: "Preskočiť na hlavný obsah"
+  toggle_submenu: "Prepnúť podponuku"
+
+search:
+  open_button_title: "Hľadať (/ alebo ⌘K)"
+  close_button_title: "Zavrieť (Esc)"
+  input_placeholder: "Hľadať"
+
+sharing:
+  email: "Odoslať e-mailom"
+  facebook: "Zdieľať na Facebooku"
+  line: "Zdieľať na LINE"
+  linkedin: "Zdieľať na LinkedIne"
+  pinterest: "Pripnúť na Pinterest"
+  reddit: "Odoslať na Reddit"
+  twitter: "Tweetnúť na Twitteri"
+  bluesky: "Uverejniť na Bluesky"
+  whatsapp: "Zdieľať cez WhatsApp"
+  telegram: "Zdieľať cez Telegram"
+  mastodon: "Zdieľať cez Mastodon"
+
+shortcode:
+  recent_articles: "Najnovšie"
+
+recent:
+  show_more: "Zobraziť viac"
+
+admonition:
+  abstract: "Zhrnutie"
+  bug: "Chyba"
+  caution: "Upozornenie"
+  danger: "Nebezpečenstvo"
+  example: "Príklad"
+  failure: "Zlyhanie"
+  important: "Dôležité"
+  info: "Informácia"
+  note: "Poznámka"
+  question: "Otázka"
+  quote: "Citát"
+  success: "Úspech"
+  tip: "Tip"
+  todo: "Úloha"
+  warning: "Varovanie"
